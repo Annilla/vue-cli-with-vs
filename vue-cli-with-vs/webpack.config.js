@@ -5,9 +5,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'app.build.js'
+    path: path.resolve(__dirname, './Content'),
+    publicPath: '/Content/',
+    filename: '../Scripts/app.build.js'
   },
   module: {
     rules: [
@@ -39,26 +39,29 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: '[name].[ext]?[hash]',
+          outputPath: 'img/'
         }
       }
     ]
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'img': path.resolve(__dirname, './src/assets'),
+      'sharedSCSS': path.resolve(__dirname, './src/sass/shared.scss')
     }
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
   },
   performance: {
     hints: false
   },
   devtool: '#eval-source-map',
   plugins: [
-    new ExtractTextPlugin('app.css')
+    new ExtractTextPlugin('app.build.css')
   ]
 }
 

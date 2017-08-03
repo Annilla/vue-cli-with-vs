@@ -5,9 +5,10 @@
   "author": "Anny Chang <AnnyChang@kingstono365.onmicrosoft.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "hot": "webpack -d --watch --color",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "server": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "dev": "webpack -d --watch --color",
+    "pro": "webpack -p --color"
   },
   "dependencies": {
     "vue": "^2.4.2"
