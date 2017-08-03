@@ -71,3 +71,4 @@ C:\Users\mobile\Source\Repos\vue-cli-with-vs\vue-cli-with-vs\bin\zh-Hant\System.
 C:\Users\mobile\Source\Repos\vue-cli-with-vs\vue-cli-with-vs\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
 C:\Users\mobile\Source\Repos\vue-cli-with-vs\vue-cli-with-vs\obj\Debug\vue-cli-with-vs.dll
 C:\Users\mobile\Source\Repos\vue-cli-with-vs\vue-cli-with-vs\obj\Debug\vue-cli-with-vs.pdb
+C:\Users\mobile\Source\Repos\vue-cli-with-vs\vue-cli-with-vs\obj\Debug\vue-cli-with-vs.csprojResolveAssemblyReference.cache
