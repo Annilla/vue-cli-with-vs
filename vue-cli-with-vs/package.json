@@ -5,7 +5,7 @@
   "author": "Anny Chang <AnnyChang@kingstono365.onmicrosoft.com>",
   "private": true,
   "scripts": {
-    "install": "npm install --no-optional",
+    "install-o": "npm install --no-optional",
     "server": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
