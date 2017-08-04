@@ -6,9 +6,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.resolve(__dirname, './Content'),
-    publicPath: '/Content/',
-    filename: '../Scripts/app.build.js'
+    path: path.resolve(__dirname, './'),
+    publicPath: '/',
+    filename: 'Scripts/app.build.js'
   },
   module: {
     rules: [
@@ -41,7 +41,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]',
-          outputPath: 'img/'
+          outputPath: 'Content/img/'
         }
       }
     ]
@@ -54,6 +54,7 @@ module.exports = {
     }
   },
   devServer: {
+    port: 9000,
     historyApiFallback: true,
     noInfo: false
   },
@@ -62,7 +63,7 @@ module.exports = {
   },
   devtool: '#eval-source-map',
   plugins: [
-    new ExtractTextPlugin('app.build.css')
+    new ExtractTextPlugin('Content/app.build.css')
   ]
 }
 

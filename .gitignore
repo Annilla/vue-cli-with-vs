@@ -8,6 +8,7 @@ yarn-error.log
 .idea
 *.cache
 *.dll
+*.pdb
 *.suo
 *.ntvs*
 *.njsproj
