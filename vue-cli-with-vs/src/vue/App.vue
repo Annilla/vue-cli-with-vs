@@ -58,6 +58,9 @@ export default {
 </script>
 
 <style lang="scss">
+// Plugin CSS
+@import '../../node_modules/vue-material/dist/vue-material.css';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

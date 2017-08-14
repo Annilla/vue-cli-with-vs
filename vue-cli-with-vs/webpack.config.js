@@ -1,4 +1,5 @@
 /// <binding />
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -8,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './'),
     publicPath: '/',
-    filename: 'Scripts/app.build.js'
+    filename: 'Scripts/[name].js'
   },
   module: {
     rules: [
@@ -63,7 +64,7 @@ module.exports = {
   },
   devtool: '#eval-source-map',
   plugins: [
-    new ExtractTextPlugin('Content/app.build.css')
+    new ExtractTextPlugin('Content/main.css')
   ]
 }
 
@@ -71,6 +72,9 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
+    // new BundleAnalyzerPlugin({
+    //     analyzerMode: 'static'
+    // }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -84,6 +88,14 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    // Decouple vendor code
+    // https://vuejsdevelopers.com/2017/06/18/vue-js-boost-your-app-with-webpack/
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module) {
+        return module.context && module.context.indexOf('node_modules') !== -1;
+      }
     })
   ])
 }

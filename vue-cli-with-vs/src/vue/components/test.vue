@@ -1,5 +1,7 @@
 <template>
-  <div class='test'>test</div>
+  <div class='test'>
+    <md-button class="md-raised md-primary">Primary</md-button>
+  </div>
 </template>
 
 <script>

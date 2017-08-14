@@ -13,7 +13,8 @@
     "fsevents": "*"
   },
   "dependencies": {
-    "vue": "^2.4.2"
+    "vue": "^2.4.2",
+    "vue-material": "^0.7.4"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -32,6 +33,7 @@
     "vue-loader": "^13.0.2",
     "vue-template-compiler": "^2.4.2",
     "webpack": "^3.4.1",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.6.1"
   }
 }

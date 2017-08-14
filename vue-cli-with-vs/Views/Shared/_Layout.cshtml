@@ -8,9 +8,9 @@
     <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
     @if (Settings.UseWebpackDevServer)
     {
-        <link rel="stylesheet" href="@(Settings.WebpackDevServerRoot)/Content/app.build.css">
+        <link rel="stylesheet" href="@(Settings.WebpackDevServerRoot)/Content/main.css">
     } else {
-        <link rel="stylesheet" href="/Content/app.build.css">
+        <link rel="stylesheet" href="/Content/main.css">
     }
 </head>
 <body>
@@ -19,9 +19,10 @@
 
     @if (Settings.UseWebpackDevServer)
     {
-        <script src="@(Settings.WebpackDevServerRoot)/Scripts/app.build.js"></script>
+        <script src="@(Settings.WebpackDevServerRoot)/Scripts/main.js"></script>
     } else {
-        <script src="/Scripts/app.build.js"></script>
+        <script src="/Scripts/vendor.js"></script>
+        <script src="/Scripts/main.js"></script>
     }
     @RenderSection("scripts", required: false) 
 </body>
